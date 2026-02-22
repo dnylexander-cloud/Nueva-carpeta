@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-custom {
+            background-color: #459cff;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: rgb(184, 233, 255) !important;
+        }
+        .welcome-message {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Login con empresa De La Cruz</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">
+                            Cerrar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="welcome-message">
+                    
+                    <!-- 🔥 MÁS SEGURO -->
+                    <h2>
+                        Bienvenido, 
+                        <span class="text-primary">
+                            {{ session.get('username') }}
+                        </span>!
+                    </h2>
+
+                    <p class="lead">
+                        Has iniciado sesión con nuestra empresa.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
