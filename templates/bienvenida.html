@@ -4,28 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-        .navbar-custom {
-            background-color: #459cff;
+        #fondo-personalizado {
+            background: linear-gradient( to bottom,#000000, #444444);
+            min-height: 100vh;
+            margin: 0;
         }
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: rgb(184, 233, 255) !important;
+        .navbar-custom {
+            background-color: #000000;
+            }
+        .navbar-custom a,
+        .navbar-custom span,
+        .navbar-custom h1 
+        .navbar-custom h2 {
+            color: ffffff !important;
+        }
+        .btn-personalizado {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            font-weight: bold;
+        }
+        .btn-personalizado:hover {
+            background-color: #1a1a1a;
+        }
+        .enlace {
+            color: #000000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .enlace:hover{
+            color: #000000;
+            text-decoration: underline;
         }
         .welcome-message {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        }      
+        .navbar-custom {
+    background-color: #000000;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom span,
+.navbar-custom a {
+    color: #ffffff !important;
+}     
     </style>
 </head>
-<body class="bg-dark">
-    <!-- Barra de navegación -->
+<body id="fondo-personalizado">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Login con empresa De La Cruz</a>
@@ -41,32 +72,23 @@
             </div>
         </div>
     </nav>
-
-    <!-- Contenido principal -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
                 <div class="welcome-message">
-                    
-                    <!-- 🔥 MÁS SEGURO -->
                     <h2>
                         Bienvenido, 
                         <span class="text-primary">
                             {{ session.get('username') }}
                         </span>!
                     </h2>
-
                     <p class="lead">
                         Has iniciado sesión con nuestra empresa.
                     </p>
-
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
